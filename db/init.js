@@ -23,14 +23,10 @@ await connection.query(`
  year INT,
  comment TEXT,
  rating INT,
- image_url TEXT,
+ image_url VARCHAR(255),
  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
  );
  `);
-
-await connection.query(`
-  ALTER TABLE recommendations MODIFY COLUMN image_url TEXT;
-`);
 
 await connection.end();
 }
